@@ -7,19 +7,246 @@
     <title>Nitro Animasyon</title>
     <link rel="icon" href="./img/nitrologo.jpg" type="image/x-icon">
     <style>
-        * {
+              /* Reset CSS */
+              * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Genel Stiller */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             font-size: 16px;
             line-height: 1.6em;
             color: #333;
             overflow-x: hidden;
             background-color: #f9f9f9;
+        }
+
+        /* Telefon Uyumlu Stiller */
+        @media only screen and (max-width: 767px) {
+            .brand-title {
+                font-size: 2.5em;
+            }
+
+            .brand-slogan {
+                font-size: 1em;
+            }
+
+            .sub-title {
+                font-size: 1.5em;
+            }
+
+            .btn {
+                font-size: 1em;
+                padding: 12px 24px;
+            }
+
+            .project-card {
+                width: 100%;
+            }
+
+            /* Navbar Stilleri */
+            header {
+                padding: 10px 0;
+            }
+
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar a {
+                margin-bottom: 10px;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Başlık Stilleri */
+        .brand-title {
+            font-size: 4em;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #ffae00;
+        }
+
+        .brand-slogan {
+            font-size: 1.2em;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        /* Alt Başlık Stilleri */
+        .sub-title {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        /* Navbar Stilleri */
+        header {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 16px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .navbar a:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #b8ab67;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ffd700;
+        }
+
+        .navbar a:hover:after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        /* ... Your existing styles ... */
+
+header {
+    padding: 20px 0;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: padding 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.shrink {
+    padding: 10px 0;
+    background-color: rgba(26, 26, 26, 0.8); /* Semi-transparent background when the navbar shrinks */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5); /* Adjust shadow when the navbar shrinks */
+}
+
+header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: width 0.3s ease, height 0.3s ease; /* Add transition for smooth animation */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: padding 0.3s ease; /* Add transition for smooth animation */
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 16px;
+    transition: padding 0.3s ease, font-size 0.3s ease; /* Add transition for smooth animation */
+}
+
+/* ... Your existing styles ... */
+  /* Navbar Shrink Effect */
+        header.shrink {
+            padding: 10px 0;
+            background-color: #1a1a1a; /* Change the background color when the navbar shrinks */
+            transition: background-color 0.3s ease;
+        }
+
+        header.shrink img {
+            width: 40px; /* Adjust the logo size when the navbar shrinks */
+            height: 40px;
+        }
+
+        header.shrink .navbar a {
+            padding: 10px 16px; /* Adjust the padding of navbar links when the navbar shrinks */
+        }
+
+        /* Buton Stilleri */
+        .btn {
+            padding: 15px 30px;
+            background-color: #ffae00;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffd700;
+        }
+
+        /* Telefon Uyumlu Stiller */
+        @media only screen and (max-width: 767px) {
+            .brand-title {
+                font-size: 3em;
+            }
+
+            .brand-slogan {
+                font-size: 1em;
+            }
+
+            .sub-title {
+                font-size: 1.5em;
+            }
+
+            .btn {
+                font-size: 1em;
+                padding: 12px 24px;
+            }
+
+            .project-card {
+                width: 100%;
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         header {
@@ -83,6 +310,39 @@
             border-radius: 8px;
             margin: 20px;
         }
+        .video-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.video-container iframe {
+    width: 48%; /* Veya istediğiniz genişliği ayarlayın */
+    height: 300px; /* Veya istediğiniz yüksekliği ayarlayın */
+    margin-bottom: 10px; /* İstenirse boşluk ekleyebilirsiniz */
+}
+.our-animations {
+    text-align: center;
+    padding: 50px 0;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.video-container iframe {
+    width: 48%;
+    height: 300px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
 
         .animation-series {
             text-align: center;
@@ -191,6 +451,112 @@
             border-radius: 8px;
             margin: 20px;
         }
+             /* Genel Stiller */
+             .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Başlık Stilleri */
+        .brand-title {
+            font-size: 2em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        /* Alt Başlık Stilleri */
+        .sub-title {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        /* Buton Stilleri */
+        .btn {
+            padding: 15px 30px;
+            background-color: #ffae00;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ffd700;
+        }
+
+        /* Video Stilleri */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* Proje Kartları Stilleri */
+        .project-card {
+            width: 100%;
+            margin: 20px 0;
+            padding: 30px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 1em;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Animasyonlar */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animasyonlu Elementler */
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
     </style>
 </head>
 <body>
@@ -214,15 +580,11 @@
         <p>"Neden mi? Neden olmasın!" açıklamalı eğlenceli animasyon içerikleri yapan 13 yaşındaki iyi bir animatörün animasyon kanalı. Başlarda çok iyi olmasada artık 1000 aboneden fazla takipçili olan başarılı bir kanal. Çıkardığı en ünlü serilerden biri ise "Gobland" adlı çizgi film tadında izleyebileceğiniz bir animasyon! İşte böyle bir animasyon kanalı...</p>
     </section>
 
-    <section class="our-animations" id="our-animations">
-        <div class="search-bar">
-            <input type="text" class="search-input" placeholder="Animasyon Ara...">
-            <button class="search-button">Ara</button>
-        </div>
-
+    
         <div class="video-container">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/FWmb3lKWAHw" frameborder="0" allowfullscreen></iframe>
         </div>
+        
     </section>
 
     <section class="animation-series" id="animation-series">
@@ -232,12 +594,11 @@
                 <h3>Gobland</h3>
                 <p>Lou ile Bedroger'in maceraları!</p>
             </div>
-
+    
             <div class="project-card project-card2">
                 <h3>Peserta</h3>
                 <p>Yakında çıkacak...</p>
             </div>
-
         </div>
     </section>
 
