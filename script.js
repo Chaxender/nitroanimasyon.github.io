@@ -1,5 +1,4 @@
-  // JavaScript for Smooth Scroll and Navbar Shrink Effect
-  document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
 
     window.addEventListener("scroll", function () {
@@ -10,7 +9,6 @@
         }
     });
 
-    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();

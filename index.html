@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
@@ -7,24 +7,40 @@
     <title>Nitro Animasyon</title>
     <link rel="icon" href="./img/nitrologo.jpg" type="image/x-icon">
     <style>
-              /* Reset CSS */
               * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Genel Stiller */
         body {
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
             line-height: 1.6em;
             color: #333;
             overflow-x: hidden;
-            background-color: #f9f9f9;
+            background-color: rgb(206, 206, 206);
         }
 
-        /* Telefon Uyumlu Stiller */
+.video-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+
+
+.video-container iframe {
+    width: 100%; 
+    height: 200px; 
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
         @media only screen and (max-width: 767px) {
             .brand-title {
                 font-size: 2.5em;
@@ -47,7 +63,6 @@
                 width: 100%;
             }
 
-            /* Navbar Stilleri */
             header {
                 padding: 10px 0;
             }
@@ -60,6 +75,318 @@
             .navbar a {
                 margin-bottom: 10px;
             }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    color: #333;
+    overflow-x: hidden;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 14px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #b8ab67;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffd700;
+}
+
+.navbar a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.hero {
+    background: url("./img/backround.png") no-repeat center / cover;
+    background-attachment: fixed;
+    min-height: 60vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.about {
+    text-align: center;
+    padding: 30px; 
+    background: #fff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.about h2 {
+    font-size: 1.8em;
+}
+
+.about p {
+    font-size: 1em;
+}
+
+.video-container {
+    width: 100%;
+    padding: 20px 10px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.video-container iframe {
+    width: 48%;
+    height: 200px; 
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.animation-series {
+    text-align: center;
+    padding: 30px; 
+    background: #1a1a1a;
+    color: #fff;
+    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.animation-series h2 {
+    font-size: 1.8em;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project-card {
+    width: 48%;
+    margin: 10px 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1em;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.copyright {
+    text-align: center;
+    padding: 30px; 
+    background: #1a1a1a;
+    color: #fff;
+    box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.copyright h2 {
+    font-size: 1.8em;
+}
+
+@media only screen and (max-width: 767px) {
+    header {
+        padding: 10px;
+    }
+
+    header img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        margin-bottom: 10px;
+        font-size: 1.2em;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .about,
+    .animation-series,
+    .copyright {
+        padding: 20px;
+    }
+
+    .video-container {
+        padding: 10px 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .video-container iframe {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card {
+        width: 100%;
+        margin: 10px 0;
+        padding: 15px;
+        background-color: #f4f4f4;
+        border-radius: 8px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .sidebar {
+        display: none;
+        width: 50px; 
+        height: 100vh;
+        background-color: #1a1a1a;
+        position: fixed;
+        top: 0;
+        right: -50px; 
+        transition: right 0.3s ease;
+        z-index: 1500;
+    }
+
+    .sidebar a {
+        color: #fff;
+        text-decoration: none;
+        padding: 15px;
+        display: block;
+        font-size: 1.2em;
+        transition: background-color 0.3s ease;
+    }
+
+    .sidebar-btn {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 2000;
+    }
+
+    .sidebar-btn div {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .sidebar-btn.active div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .sidebar-btn.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .sidebar-btn.active div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .sidebar.active {
+        right: 0;
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .video-container iframe {
+        height: 250px;
+    }
+
+    .sidebar {
+        width: 80px; 
+        right: -80px; 
+    }
+
+    .sidebar a {
+        padding: 20px;
+        font-size: 1.5em; 
+    }
+}
+
         }
 
         .container {
@@ -68,7 +395,6 @@
             padding: 0 20px;
         }
 
-        /* Başlık Stilleri */
         .brand-title {
             font-size: 4em;
             letter-spacing: 8px;
@@ -83,13 +409,12 @@
             margin-bottom: 30px;
         }
 
-        /* Alt Başlık Stilleri */
         .sub-title {
             font-size: 2em;
             margin-bottom: 30px;
             color: #333;
         }
-        /* Navbar Stilleri */
+
         header {
             background: #1a1a1a;
             color: #fff;
@@ -144,8 +469,32 @@
             transform: scaleX(1);
             transform-origin: bottom left;
         }
-        /* ... Your existing styles ... */
+   
+  .video-container {
+        width: 100%;
+        padding: 0 10px; 
+    }
 
+    .video-container iframe {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 10px;
+    }
+
+
+    .hero h1 {
+        font-size: 2em; 
+    }
+
+    .about,
+    .animation-series,
+    .copyright {
+        padding: 30px; 
+    }
+
+    .project-card {
+        width: 100%;
+    }
 header {
     padding: 20px 0;
     background-color: #1a1a1a;
@@ -160,8 +509,8 @@ header {
 
 header.shrink {
     padding: 10px 0;
-    background-color: rgba(26, 26, 26, 0.8); /* Semi-transparent background when the navbar shrinks */
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5); /* Adjust shadow when the navbar shrinks */
+    background-color: rgba(26, 26, 26, 0.8); 
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5); 
 }
 
 header img {
@@ -169,41 +518,87 @@ header img {
     height: 60px;
     border-radius: 50%;
     margin-right: 10px;
-    transition: width 0.3s ease, height 0.3s ease; /* Add transition for smooth animation */
+    transition: width 0.3s ease, height 0.3s ease; 
 }
 
 .navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    transition: padding 0.3s ease; /* Add transition for smooth animation */
+    transition: padding 0.3s ease;/
 }
 
 .navbar a {
     color: #fff;
     text-decoration: none;
     padding: 14px 16px;
-    transition: padding 0.3s ease, font-size 0.3s ease; /* Add transition for smooth animation */
+    transition: padding 0.3s ease, font-size 0.3s ease; 
+}
+::-webkit-scrollbar {
+    width: 12px;
 }
 
-/* ... Your existing styles ... */
-  /* Navbar Shrink Effect */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #4CAF50, #008CBA);
+    border-radius: 10px;
+    animation: rainbow 2s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        background: linear-gradient(45deg, #4CAF50, #008CBA);
+    }
+    50% {
+        background: linear-gradient(45deg, #008CBA, #4CAF50);
+    }
+    100% {
+        background: linear-gradient(45deg, #4CAF50, #008CBA);
+    }
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+body {
+    scrollbar-color: #888 transparent;
+    scrollbar-width: thin;
+}
+
+body::-webkit-scrollbar-thumb {
+    animation: slideIn 0.5s ease-in-out;
+}
         header.shrink {
             padding: 10px 0;
-            background-color: #1a1a1a; /* Change the background color when the navbar shrinks */
+            background-color: #1a1a1a; 
             transition: background-color 0.3s ease;
         }
 
         header.shrink img {
-            width: 40px; /* Adjust the logo size when the navbar shrinks */
+            width: 40px; 
             height: 40px;
         }
 
         header.shrink .navbar a {
-            padding: 10px 16px; /* Adjust the padding of navbar links when the navbar shrinks */
+            padding: 10px 16px;
         }
 
-        /* Buton Stilleri */
         .btn {
             padding: 15px 30px;
             background-color: #ffae00;
@@ -219,7 +614,6 @@ header img {
             background-color: #ffd700;
         }
 
-        /* Telefon Uyumlu Stiller */
         @media only screen and (max-width: 767px) {
             .brand-title {
                 font-size: 3em;
@@ -285,14 +679,14 @@ header img {
         }
 
         .hero {
-            background: url("./img/nitrologo.jpg") no-repeat center / cover;
+            background: url("./img/backround.png") no-repeat center / cover;
             background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            color: #fff;
+            color: #000000;
         }
 
         .hero h1 {
@@ -305,10 +699,11 @@ header img {
         .about {
             text-align: center;
             padding: 50px;
-            background: #fff;
-            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            background: rgb(198, 10, 204);
+            box-shadow: 0px 4px 20px rgba(56, 56, 56, 0.979);
             border-radius: 8px;
             margin: 20px;
+            color: white;
         }
         .video-container {
     display: flex;
@@ -317,9 +712,9 @@ header img {
 }
 
 .video-container iframe {
-    width: 48%; /* Veya istediğiniz genişliği ayarlayın */
-    height: 300px; /* Veya istediğiniz yüksekliği ayarlayın */
-    margin-bottom: 10px; /* İstenirse boşluk ekleyebilirsiniz */
+    width: 48%; 
+    height: 300px; 
+    margin-bottom: 10px; 
 }
 .our-animations {
     text-align: center;
@@ -451,14 +846,14 @@ header img {
             border-radius: 8px;
             margin: 20px;
         }
-             /* Genel Stiller */
+
              .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* Başlık Stilleri */
+
         .brand-title {
             font-size: 2em;
             letter-spacing: 4px;
@@ -466,13 +861,13 @@ header img {
             margin-bottom: 20px;
         }
 
-        /* Alt Başlık Stilleri */
+
         .sub-title {
             font-size: 1.5em;
             margin-bottom: 30px;
         }
 
-        /* Buton Stilleri */
+
         .btn {
             padding: 15px 30px;
             background-color: #ffae00;
@@ -488,11 +883,11 @@ header img {
             background-color: #ffd700;
         }
 
-        /* Video Stilleri */
+
         .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%; 
             overflow: hidden;
             border-radius: 8px;
         }
@@ -507,7 +902,7 @@ header img {
             border-radius: 8px;
         }
 
-        /* Proje Kartları Stilleri */
+
         .project-card {
             width: 100%;
             margin: 20px 0;
@@ -535,7 +930,6 @@ header img {
             border-radius: 8px;
         }
 
-        /* Animasyonlar */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -548,7 +942,7 @@ header img {
             }
         }
 
-        /* Animasyonlu Elementler */
+
         .animated {
             animation-duration: 1s;
             animation-fill-mode: both;
@@ -557,6 +951,10 @@ header img {
         .fadeInUp {
             animation-name: fadeInUp;
         }
+        * {
+    -webkit-tap-highlight-color: transparent;
+    tap-highlight-color: transparent;
+}
     </style>
 </head>
 <body>
@@ -581,10 +979,10 @@ header img {
     </section>
 
     
-        <div class="video-container">
+        <div class="video-container" id="our-animations">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/FWmb3lKWAHw" frameborder="0" allowfullscreen></iframe>
         </div>
-        
+
     </section>
 
     <section class="animation-series" id="animation-series">
@@ -608,5 +1006,12 @@ header img {
         <p>Mathoperia Studio &#169 Tüm Hakları Saklıdır</p>
     </section>
     <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@1.13.0/js/OverlayScrollbars.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            OverlayScrollbars(document.body, {});
+        });
+    </script>
 </body>
 </html>
